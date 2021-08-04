@@ -50,11 +50,37 @@
   });
 
   function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
-      method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
-    })
+	  let message = `Hi Admin,
+
+You got a message from universalsurgical.co.in contact field.
+
+Sender Name : `+thisForm["name"].value+
+`
+Sender Email/Mobile No. : `+thisForm["email1"].value+
+`
+Message is : `+thisForm["message"].value+
+`
+
+Regards:
+Team Universal Surgical
+`;
+	  let data1 = {
+		"from":"universalsurgical.co.in",
+        "sendTo":"info@universalsurgical.co.in",
+		"subject":"Message from universalsurgical.co.in website",//create body Email thisForm["name"].value  thisForm["name"].value
+		"messageBody":message,
+		"carbonCopy":"NA"
+		};
+
+	  const params = {
+            headers: {
+                'Accept': "application/json, text/plain, */*",
+                'Content-Type': "application/json;charset=utf-8"
+            },
+			body: JSON.stringify(data1),
+            method: "POST"
+        };
+    fetch(action, params)
     .then(response => {
       if( response.ok ) {
         return response.text()
