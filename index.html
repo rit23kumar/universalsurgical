@@ -28,6 +28,17 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style>
+	#venta-convas
+	{
+		margin: 60px 0 0 0;;
+		padding:0;
+		width:100%;
+		height:85vh;
+	}
+
+</style>
 
 </head>
 
@@ -53,21 +64,20 @@
       <!-- <a href="#about" >Get Started</a> -->
     </div>
   </header><!-- End Header -->
-
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+  <div id="venta-convas">
+	<div class="container" data-aos="zoom-out" data-aos-delay="100">
       <div class="row">
-        <div class="col-xl-6">
-          <h1>Get bettter experience with <spna style="">Universal Surgical Enterprises</span></h1>
-          <h2>We are dedicated to serve you by supplying medical and surgical equipment with quality</h2>
-          <a href="#about" class="btn-get-started scrollto">More About Us</a>
+        <div class="col-xl-6" style="margin-top: 50px;color: white;">
+          <h2>Get bettter experience with <spna style="font-size: 38px; color: #ff0003;font-weight: 700;">Universal Surgical Enterprises</span></h2>
+		  <br />
+          <h3>We are dedicated to serve you by supplying medical and surgical equipment with quality</h3>
+          <a href="#about" class="btn-get-started scrollto"><u>Know More About Us</u></a>
         </div>
       </div>
     </div>
+  </div>
 
-  </section><!-- End Hero -->
 
   <main id="main">
 
@@ -829,6 +839,23 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+   <!--hero animation-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+	<script>
+	VANTA.GLOBE({
+	  el: "#venta-convas",
+	  mouseControls: true,
+	  touchControls: true,
+	  gyroControls: false,
+	  minHeight: 200.00,
+	  minWidth: 200.00,
+	  scale: 1.00,
+	  scaleMobile: 1.00
+	})
+	</script>
+
+
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
